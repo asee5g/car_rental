@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: none;
+            text-align: center;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .dots-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot.active, .dot:hover {
+            background-color: #f5b754;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-image {
+            flex: 1 1 50%;
+            text-align: center;
+        }
+        .product-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-details {
+            flex: 1 1 50%;
+        }
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 24px;
+            color: #f5b754;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-description {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        .product-actions {
+            margin: 20px 0;
+        }
+        .product-actions button {
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #f5b754;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .product-actions button:hover {
+            background-color: #f5b754;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h2 {
+            font-size: 24px;
+            border-bottom: 2px solid #f5b754;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .specifications {
+            list-style: none;
+            padding: 0;
+        }
+        .specifications li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .reviews, .related-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .review, .related-product {
+            flex: 1 1 45%;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .related-product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .product-header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-details {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="slides">
+            <img src="assets/mahi1.jpg" alt="Slide 1">
+        </div>
+        <div class="slides">
+            <img src="assets/mahi2.jpg" alt="Slide 2">
+        </div>
+        <div class="slides">
+            <img src="assets/mahi3.jpg" alt="Slide 3">
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Dots/Indicators -->
+    <div class="dots-container">
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+        <span class="dot" onclick="setSlide(3)"></span>
+    </div>
+            <!-- Product Details -->
+            <div class="product-details">
+                <h1 class="product-title">Mahindra Scorpio 2022</h1>
+                <p class="product-price">₹700.00 / Day</p>
+                <p class="product-description">
+                    The Mahindra Scorpio 2022 is a rugged and powerful SUV combining bold design, advanced features, and exceptional off-road capability.
+                </p>
+                <!-- Product Actions -->
+                
+                <div class="product-actions">
+                    <form action="newbill.html" method="post">
+                    <button onclick="buyNow()">Rent Now</button></form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specifications Section -->
+        <div class="section">
+            <h2>Specifications</h2>
+            <ul class="specifications">
+                <li>Cargo Volume : 460 L</li>
+                <li>Engine : 2.2L 4-cylinder</li>
+                <li>Air Bags: 6</li>
+                <li>Fuel Tank Capacity : 57 L</li>
+            </ul>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="section">
+            <h2>Rating </h2>
+            <div class="reviews">
+                <div class="review">
+                    <h3>Global New Car Assessment Programme (Global NCAP) 2022</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>The Mahindra Scorpio achieved a five star rating for adult occupant protection in Global NCAP’s latest #SaferCarsForIndia crash tests. </p>
+                    <p>Adult occupant protection:</p>
+                    <p>● The protection offered to the driver and passenger’s head and neck was good. Driver and passenger’s chest showed good protection.</p>
+                    <p>● Driver and passenger knees showed good protection. Driver tibias showed adequate protection while passenger’s tibias showed adequate and good protection.</p>
+                    <p>⭐⭐⭐⭐</p>
+                    <p>The Mahindra Scorpio has achieved a four stars for child occupant protection in Global NCAP’s latest #SaferCarsForIndia crash tests. </p>
+                    <p>Child Occupant Protection:</p>
+                    <p>● The child seat for the 3 year old and 1.5 year old were installed rearward facing with ISOFIX connectors and support leg.</p>
+                    <p>● The CRS was able to prevent excessive forward movement during the impact and offered good protection to the head and chest of both dummies. CRS marking was permanent.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="product-actions">
+            <form action="index2.html" method="post">
+            <button onclick="addToCart()">Go to Product List</button></form>
+        </div>
+
+    <script>
+        function buyNow() {
+            alert("Redirecting to checkout...");
+            // Add code here to redirect to the checkout page
+        }
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Change slide with arrows
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Set specific slide with dots
+        function setSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        // Display the current slide
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slides");
+            const dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+</html>

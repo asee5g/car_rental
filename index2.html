@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #f5b754;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 15px;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #f5b754;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .product-button {
+            display: block;
+            text-align: center;
+            background-color: #f5b754;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-radius: 4px;
+        }
+        .product-button:hover {
+            background-color: #f5b754;
+        }
+        @media (max-width: 768px) {
+            .product-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Available Cars</h1>
+        <p>Explore our collection</p>
+    </div>
+    <div class="container">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="assets/pngwing1.png" alt="Product 1" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Hyundai Tucson 2022</h3>
+                <p class="product-description">The Hyundai Tucson is a stylish, versatile, and tech-savvy compact SUV.</p>
+                <p class="product-price">₹500.00 / Day</p>
+                <a href="prod1.html" class="product-button">View Details</a>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="assets/tata1bg.png" alt="Product 2" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Tata Punch 2022</h3>
+                <p class="product-description">The Tata Punch is a compact SUV known for its bold design, robust build, and excellent performance.</p>
+                <p class="product-price">₹500.00 / Day</p>
+                <a href="prod2.html" class="product-button">View Details</a>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="assets/marutibg1.png" alt="Product 3" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Maruti Suzuki Invicto 2023</h3>
+                <p class="product-description">The Maruti Suzuki Invicto 2023 is a premium MPV blending elegance, spacious interiors.</p>
+                <p class="product-price">₹650.00 / Day</p>
+                <a href="prod3.html" class="product-button">View Details</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/creta.jpg" alt="Product 4" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Hyundai Motors Creta 2022</h3>
+                <p class="product-description">The Hyundai Creta 2022 is a stylish and feature-packed compact SUV.</p>
+                <p class="product-price">₹650.00 / Day</p>
+                <a href="prod4.html" class="product-button">View Details</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/mahi1bg.png" alt="Product 5" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Mahindra Scorpio 2022</h3>
+                <p class="product-description">The Mahindra Scorpio 2022 is a rugged and powerful SUV combining bold design.</p>
+                <p class="product-price">₹700.00 / Day</p>
+                <a href="prod5.html" class="product-button">View Details</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="assets/nissanbg.png" alt="Product 6" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Nissan Magnite 2022</h3>
+                <p class="product-description">The Nissan Magnite 2022 is a stylish and budget-friendly compact SUV.</p>
+                <p class="product-price">₹600.00 / Day</p>
+                <a href="prod6.html" class="product-button">View Details</a>
+            </div>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+</body>
+</html>

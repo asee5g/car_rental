@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #555;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #d6a04a;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .bill {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e9f7ef;
+            border: 1px solid #28a745;
+            border-radius: 10px;
+            display: none;
+        }
+        .bill h2 {
+            color: #28a745;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Rental Details</h1>
+        <form id="rentalForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="carModel">Car Model:</label>
+            <select id="carModel" name="carModel" required>
+                <option value="Hyundai Tucson">Hyundai Tucson 2022 - ₹ 500/day</option>
+                <option value="Tata Punch">Tata Punch 2022 - ₹ 500/day</option>
+                <option value="Maruti Suzuki">Maruti Suzuki Invicto 2023 - ₹ 650/day</option>
+                <option value="Hyundai Creta">Hyundai Motors Creta 2022 - ₹ 650/day</option>
+                <option value="Mahindra Scorpio">Mahindra Scorpio 2022 - ₹ 700/day</option>
+                <option value="Nissan Magnite">Nissan Magnite 2022 - ₹ 600/day</option>
+            </select>
+
+            <label for="rentDays">Number of Days:</label>
+            <input type="number" id="rentDays" name="rentDays" placeholder="Enter number of days" required min="1">
+
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
+
+            <button type="button" onclick="generateBill()">Generate Bill</button>
+        </form>
+
+        <div class="bill" id="billSection">
+            <h2>Rental Bill</h2>
+            <p><strong>Name:</strong> <span id="billName"></span></p>
+            <p><strong>Car Model:</strong> <span id="billCar"></span></p>
+            <p><strong>Number of Days:</strong> <span id="billDays"></span></p>
+            <p><strong>Contact:</strong> <span id="billContact"></span></p>
+            <p><strong>Total Cost:</strong> ₹<span id="billTotal"></span></p>
+            <form action="reindex.html" method="post">
+            <button class="btn btn-primary" onclick="alert('Are you Sure Want to go Home Page')">Go To Home Page</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function generateBill() {
+            // Fetch input values
+            const name = document.getElementById('name').value;
+            const carModel = document.getElementById('carModel').value;
+            const rentDays = document.getElementById('rentDays').value;
+            const contact = document.getElementById('contact').value;
+
+            // Determine cost per day based on selected car model
+            let costPerDay = 0;
+            if (carModel === "Hyundai Tucson") costPerDay = 500;
+            else if (carModel === "Tata Punch") costPerDay = 500;
+            else if (carModel === "Maruti Suzuki") costPerDay = 650;
+            else if (carModel === "Hyundai Creta") costPerDay = 650;
+            else if (carModel === "Mahindra Scorpio") costPerDay = 700;
+            else if (carModel === "Nissan Magnite") costPerDay = 600;
+
+            // Calculate total cost
+            const totalCost = costPerDay * rentDays;
+
+            // Update bill section
+            document.getElementById('billName').textContent = name;
+            document.getElementById('billCar').textContent = carModel;
+            document.getElementById('billDays').textContent = rentDays;
+            document.getElementById('billContact').textContent = contact;
+            document.getElementById('billTotal').textContent = totalCost;
+
+            // Show the bill section
+            document.getElementById('billSection').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
